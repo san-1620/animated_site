@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Heyy Hii 💖</title>
+  <style>
+    body {
+      background: linear-gradient(120deg, #ff9a9e, #fad0c4);
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      font-size: 40px;
+      color: white;
+      animation: zoom 2s infinite;
+      text-align: center;
+    }
+
+    @keyframes zoom {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    .emoji {
+      position: absolute;
+      font-size: 30px;
+      animation: float 6s infinite linear;
+    }
+
+    @keyframes float {
+      from { transform: translateY(100vh); }
+      to { transform: translateY(-10vh); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Heyy Hii 💖<br>Call Me 😍❤️😂😊</h1>
+
+  <script>
+    const emojis = ["😍","❤️","😂","😊","💖"];
+    setInterval(() => {
+      const e = document.createElement("div");
+      e.className = "emoji";
+      e.innerText = emojis[Math.floor(Math.random()*emojis.length)];
+      e.style.left = Math.random() * 100 + "vw";
+      document.body.appendChild(e);
+      setTimeout(() => e.remove(), 6000);
+    }, 500);
+  </script>
+
+</body>
+</html>
+
